@@ -1,11 +1,18 @@
-jmap is a tool used to store million to 100 millions k-v ojects in local server and costs less memory.
-first of all,you should estimate your requirements.  
+################  
+jmap is a tool used to store million to 100 millions k-v ojects in local server and costs less memory. 
+
+first of all,you should estimate your requirements.    
+
 cap = cap(your k-v objects)  
 if cap < 10k {  
     use go map  
  } else {  
     use jmap instead  
 }   
+################  
+
+#benchMark test
+
 j-map ready! len: 10000000  
 goMap ready! len: 10000000  
 goos: linux  
