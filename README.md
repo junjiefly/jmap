@@ -1,5 +1,5 @@
 ################  
-jmap is a tool used to store million to 100 millions k-v ojects in local server and costs less memory. 
+jmap is a tool used to store million to 100 millions k-v objects in local server and costs less memory. 
 
 first of all,you should estimate your requirements.    
 
