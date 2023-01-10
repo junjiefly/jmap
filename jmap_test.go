@@ -14,7 +14,7 @@ var mmap map[uint64]int
 
 func TestMain(m *testing.M) {
 	jMap = NewJMap(1024)
-	mmap = make(map[uint64]int)
+	mmap = make(map[uint64]int,1024)
 	for i := 0; i < needleCount; i++ {
 		jMap.Set(uint64(i), i)
 		mmap[uint64(i)] = i
@@ -24,32 +24,32 @@ func TestMain(m *testing.M) {
 	m.Run()
 }
 
-func Benchmark_JMapSet(b *testing.B) {
+func BenchmarkJMapSet(b *testing.B) {
 	k := rand.Intn(needleCount)
 	jMap.Set(uint64(k), 0)
 }
 
-func Benchmark_JMapGet(b *testing.B) {
+func BenchmarkJMapGet(b *testing.B) {
 	k := rand.Intn(needleCount)
 	_, _ = jMap.Get(uint64(k))
 }
 
-func Benchmark_JMapDel(b *testing.B) {
+func BenchmarkJMapDelete(b *testing.B) {
 	k := rand.Intn(needleCount)
 	_ = jMap.Delete(uint64(k))
 }
 
-func Benchmark_MapSet(b *testing.B) {
+func BenchmarkMapSet(b *testing.B) {
 	k := rand.Intn(needleCount)
 	mmap[uint64(k)] = 0
 }
 
-func Benchmark_MapGet(b *testing.B) {
+func BenchmarkMapGet(b *testing.B) {
 	k := rand.Intn(needleCount)
 	_, _ = mmap[uint64(k)]
 }
 
-func Benchmark_MapDelete(b *testing.B) {
+func BenchmarkMapDelete(b *testing.B) {
 	k := rand.Intn(needleCount)
 	delete(mmap, uint64(k))
 }
