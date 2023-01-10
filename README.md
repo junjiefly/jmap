@@ -1,3 +1,4 @@
+# jmap: use jmap instead of map
 ################  
 jmap is a tool used to store million to 100 millions k-v objects in local server and costs less memory. 
 
